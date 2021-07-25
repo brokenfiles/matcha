@@ -1,0 +1,40 @@
+version: "3"
+
+services:
+  express:
+    build: ./express/
+    container_name: express
+    restart: always
+    volumes:
+      - ./express:/app
+    ports:
+      - "4000:4000"
+    environment:
+      PORT: 4000
+      FRONT_URL: "http://localhost:3000"
+    command: "yarn start:dev"
+    depends_on:
+      - postgres
+  nuxt:
+    build: ./nuxt/
+    container_name: nuxt
+    restart: always
+    volumes:
+      - ./nuxt:/app
+    ports:
+      - "3000:3000"
+    environment:
+      BACKEND_URL: "http://localhost:4000"
+    command: "yarn dev"
+    depends_on:
+      - express
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres/.tmp/db:/var/lib/postgresql/data
+      - ./postgres/create_database.sql:/docker-entrypoint-initdb.d/create_database.sql
+    environment:
+      POSTGRES_PASSWORD: password
+      PGDATA: /tmp
