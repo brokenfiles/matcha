@@ -1,17 +1,31 @@
 {
   "name": "express",
+  "type": "module",
   "version": "1.0.0",
   "description": "express of project matcha",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start:dev": "nodemon index.js",
+    "start:dev": "nodemon --experimental-modules --es-module-specifier-resolution=node app.js",
+    "start:prod": "NODE_ENV=production node app.js",
+    "migrate": "db-migrate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "mbrignol and llaurent",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "db-migrate": "^0.11.12",
+    "db-migrate-pg": "^1.2.2",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
     "nodemon": "^2.0.12"
   }
 }

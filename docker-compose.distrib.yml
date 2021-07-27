@@ -12,6 +12,10 @@ services:
     environment:
       PORT: 4000
       FRONT_URL: "http://localhost:3000"
+      DB_NAME: "matcha"
+      DB_USERNAME: "postgres"
+      DB_PASSWORD: "password"
+      DB_HOST: "postgres"
     command: "yarn start:dev"
     depends_on:
       - postgres

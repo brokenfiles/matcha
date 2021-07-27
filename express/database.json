@@ -1,0 +1,23 @@
+{
+
+  "dev": {
+    "driver": "pg"
+  },
+
+  "test": {
+    "driver": "pg"
+  },
+
+  "prod": {
+    "driver": "pg"
+  },
+
+  "pg": {
+    "driver": "pg",
+    "user": "postgres",
+    "password": "password",
+    "host": "postgres",
+    "database": "matcha",
+    "port": 5432
+  }
+}
