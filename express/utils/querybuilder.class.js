@@ -3,6 +3,4 @@
  */
 export class QueryBuilder {
 
-    
-
 }
