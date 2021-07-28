@@ -1,7 +1,7 @@
 import {db_config} from "./db";
 import pg from 'pg'
 
-const pool = new pg.Pool({
+export const pool = new pg.Pool({
     user: db_config.username,
     host: db_config.hostname,
     database: db_config.database,
@@ -9,4 +9,7 @@ const pool = new pg.Pool({
     post: db_config.port
 })
 
-export default pool
+export async function query(query, params) {
+    const {rows} = await pool.query(query, params)
+    return rows
+}

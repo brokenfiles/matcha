@@ -1,8 +1,5 @@
-import pool from "../../config/pool";
+import {query} from "../../config/pool";
 
-/**
- * @returns {[]}
- */
 export async function findUsers () {
-    return {yo: true}
+    return (await query(`SELECT * FROM users WHERE id = $1`, [1]))
 }
