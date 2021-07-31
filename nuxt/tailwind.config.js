@@ -8,6 +8,8 @@ module.exports = {
         'stroke': '#EEF0F5',
         'primary': '#FF8300',
         'secondary': '#1453B2',
+        'light': '#F6F7FA',
+        'fullwhite': '#FFFFFF',
       },
     extend: {},
   },

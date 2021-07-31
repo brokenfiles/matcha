@@ -1,7 +1,7 @@
 <template>
-	<div class="fixed flex border-b border-stroke w-full bg-white h-16 justify-between items-center text-center text-text" style="background: #ffffff">
+	<div class="shadow fixed flex border-b border-stroke w-full bg-white h-16 justify-between items-center text-center text-text" style="background: #ffffff">
 		<div class="flex pl-6 h-full">
-			<div class="px-6 flex h-full items-center text-center">Matcha</div>
+			<NuxtLink to="/" class="px-6 flex h-full items-center text-center">Matcha</NuxtLink>
 			<nav class="flex flex-row items-center text-center font-bold">
 				<a href="#" class="px-2.5">DECOUVRIR</a>
 				<a href="#" class="px-2.5">RECHERCHE</a>
@@ -23,18 +23,27 @@
 					<a href="#" class="px-1.5">Message</a>
 				</div>
 			</nav>
-			<div class="px-6 flex h-full items-center text-center font-normal">
-				photo
+			<div class="px-6 flex flex-col h-full items-center text-center font-normal justify-center">
+				<span>photo</span>
+				<button @click="disconect" class="hover:bg-stroke bg-secondary text-light hover:text-secondary border border-text rounded-full px-2">disconnect</button>
 			</div>
 		</div>
-
 	</div>
 </template>
 
 <script>
+
 export default {
-	name: "headernav"
+	name: "headern_online",
+	methods: {
+		disconect()
+		{
+			if (this.$auth.loggedIn)
+				this.$auth.logout()
+		}
+	},
 }
+
 </script>
 
 <style scoped>
