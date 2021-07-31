@@ -34,7 +34,6 @@ router.get('/user', async (req, res) => {
     let user
     try {
         user = await findUserById(1)
-        console.log(user[0])
         return res.json({user: user[0]})
     }
     catch (e)

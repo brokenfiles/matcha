@@ -5,7 +5,7 @@
 			<NuxtLink to="/" class="px-6 flex h-full items-center text-center">Matcha</NuxtLink>
 		</div>
 		<div class="flex pr-6">
-			<nuxt-link to="/auth" class="hover:bg-stroke text-light hover:text-primary px-6 flex items-center text-center font-medium bg-primary py-2 rounded-2xl border border-text">
+			<nuxt-link to="/auth" class="hover:bg-stroke text-light text-sm hover:text-primary px-4 flex items-center text-center bg-primary py-1 rounded-2xl border border-text">
 				Se connecter
 			</nuxt-link>
 		</div>

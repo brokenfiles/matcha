@@ -40,11 +40,6 @@ export default {
 
 			})
 		},
-
-		sign_in()
-		{
-			console.log(this.username, this.password)
-		}
 	}
 }
 </script>
